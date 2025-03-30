@@ -18,24 +18,13 @@ Edelweiss is a lightweight game engine framework built with Python and OpenGL, d
 - GLFW
 - NumPy
 
-## Installation
-
-1. Clone the repository:
-
-```git clone https://github.com/yourusername/edelweiss.git
-cd edelweiss
-```
-
-2. Install the required Python packages:
-```
-pip install PyOpenGL PyOpenGL_accelerate glfw numpy
-```
-
-3. Ensure you have a compatible version of OpenGL installed on your system.
-
 ## Usage
 
 This will launch a window displaying animated squares and circles.
+
+<div style="text-align: center;">
+  <img src="https://github.com/sayhelloroman/edelweiss/image/example.gif" alt="GIF">
+</div>
 
 ```python
 from edelweiss import GameEngine, Scene, Square, Circle
@@ -66,3 +55,18 @@ if __name__ == "__main__":
     engine.set_scene(scene)
     engine.run()
 ```
+
+## Installation
+
+1. Clone the repository:
+
+```git clone https://github.com/yourusername/edelweiss.git
+cd edelweiss
+```
+
+2. Install the required Python packages:
+```
+pip install PyOpenGL PyOpenGL_accelerate glfw numpy
+```
+
+3. Ensure you have a compatible version of OpenGL installed on your system.
