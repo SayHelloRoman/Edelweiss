@@ -23,7 +23,8 @@ Edelweiss is a lightweight game engine framework built with Python and OpenGL, d
 1. Clone the repository:
 
 ```git clone https://github.com/yourusername/edelweiss.git
-cd edelweiss```
+cd edelweiss
+```
 
 2. Install the required Python packages:
 ```
