@@ -23,8 +23,8 @@ Edelweiss is a lightweight game engine framework built with Python and OpenGL, d
 This will launch a window displaying animated squares and circles.
 
 <div style="text-align: center;">
-  <img src="https://github.com/sayhelloroman/edelweiss/image/example.gif" alt="GIF">
-</div>
+  <img src="https://github.com/SayHelloRoman/Edelweiss/blob/main/image/example.gif" alt="GIF">
+</div>  
 
 ```python
 from edelweiss import GameEngine, Scene, Square, Circle
