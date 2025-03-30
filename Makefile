@@ -1,0 +1,1 @@
+python -m nuitka --standalone --include-package=OpenGL --include-package=OpenGL_accelerate main.py

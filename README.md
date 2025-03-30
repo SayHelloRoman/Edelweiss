@@ -1,6 +1,6 @@
 # Edelweiss
 
-Edelweiss is a lightweight game engine framework built with Python and OpenGL, designed to simplify the creation of 2D games.
+Edelweiss is a  .
 
 **Note: This project is currently in beta testing. Features may change, and there may be bugs. Contributions and feedback are welcome!**
 
@@ -48,6 +48,7 @@ if __name__ == "__main__":
 
     x = Square(name='square1')
     x.set_position(-0.5, 0.0)
+    x.set
     
 
     scene.add_object(x)

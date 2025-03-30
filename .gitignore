@@ -1,1 +1,5 @@
 *.pyc
+*.exe
+main.build/
+main.dist/
+main.onefile-build/

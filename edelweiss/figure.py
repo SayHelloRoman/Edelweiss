@@ -10,6 +10,7 @@ class GameObject(abc.ABC):
         self.position = np.array(position, dtype=np.float32)  # Position (x, y, z)
         self.color = np.array(color, dtype=np.float32)       # Color (r, g, b)
         self.scale = float(scale)                            # Scale
+        self.velocity = np.array([0.0, 0.0, 0.0], dtype=np.float32)
         self.vao = None
         self.vbo = None
         self.shader = None
