@@ -1,10 +1,9 @@
-<div style="text-align: center;">
-  <img align="center" src="https://github.com/SayHelloRoman/Edelweiss/blob/main/image/edelweiss.png" alt="Edelweiss Logo" width="150">
+<div align="center">
+  <img src="https://github.com/SayHelloRoman/Edelweiss/blob/main/image/edelweiss.png" alt="Edelweiss Logo" width="150">
   <h1>Edelweiss</h1>
   <p>Edelweiss is a lightweight game engine framework built with Python and OpenGL, designed to simplify the creation of 2D games</p>
-  <p style="font-weight:bold;">Note: This project is currently in beta testing. Features may change, and there may be bugs. Contributions and feedback are welcome!</p>
+  <p><strong>Note: This project is currently in beta testing. Features may change, and there may be bugs. Contributions and feedback are welcome!</strong></p>
 </div>
-
 ## Features
 
 - Modular structure with separate classes for the game engine, scenes, and game objects.
