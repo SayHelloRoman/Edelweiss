@@ -1,5 +1,11 @@
 <div style="text-align: center;">
-  <p><img src="https://github.com/SayHelloRoman/Edelweiss/blob/main/image/edelweiss.png" alt="Edelweiss Logo" style="display: block; margin: 0 auto;"></p>
+  <table>
+    <tr>
+      <td style="text-align: center;">
+        <img src="https://github.com/SayHelloRoman/Edelweiss/blob/main/image/edelweiss.png" alt="Edelweiss Logo" style="max-width: 300px;">
+      </td>
+    </tr>
+  </table>
   <h1>Edelweiss</h1>
   <p>Edelweiss is a lightweight game engine framework built with Python and OpenGL, designed to simplify the creation of 2D games</p>
   <p style="font-weight:bold;">Note: This project is currently in beta testing. Features may change, and there may be bugs. Contributions and feedback are welcome!</p>
