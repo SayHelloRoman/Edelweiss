@@ -1,5 +1,7 @@
 import glfw
 from OpenGL.GL import *
+
+from .audio import SoundManager
 from .figure import Square, Circle, GameObject
 import numpy as np
 import abc
@@ -29,6 +31,9 @@ class GameEngine:
         
         glfw.make_context_current(self.window)
         print(f"OpenGL Version: {glGetString(GL_VERSION).decode('utf-8')}")
+
+        # Устанавливаем обработчик для события закрытия окна
+        glfw.set_window_close_callback(self.window, self.on_window_close)
 
     def set_scene(self, scene):
         if not isinstance(scene, Scene):
@@ -61,6 +66,11 @@ class GameEngine:
 
     def stop(self):
         self.running = False
+
+    def on_window_close(self, *args, **kwargs):
+        SoundManager().stop()
+        print(SoundManager().run)
+        SoundManager().close()
 
 
 class Scene(abc.ABC):

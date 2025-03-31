@@ -1,30 +1,29 @@
-import glfw
-from OpenGL.GL import *
+import pyaudio
+import wave
+import sys
 
-def check_opengl():
-    if not glfw.init():
-        print("Не удалось инициализировать GLFW")
-        return
-    
-    # Пробуем разные версии OpenGL
-    for major, minor in [(4, 5), (3, 3), (2, 1)]:
-        glfw.window_hint(glfw.CONTEXT_VERSION_MAJOR, major)
-        glfw.window_hint(glfw.CONTEXT_VERSION_MINOR, minor)
-        glfw.window_hint(glfw.OPENGL_PROFILE, glfw.OPENGL_CORE_PROFILE)
-        glfw.window_hint(glfw.OPENGL_FORWARD_COMPAT, GL_TRUE)
+CHUNK = 1024
 
-        window = glfw.create_window(800, 600, "Test", None, None)
-        if window:
-            glfw.make_context_current(window)
-            version = glGetString(GL_VERSION).decode('utf-8')
-            print(f"Успешно создан контекст OpenGL {major}.{minor}: {version}")
-            print(f"glGenVertexArrays доступен: {bool(glGenVertexArrays)}")
-            glfw.destroy_window(window)
-            break
-        else:
-            print(f"Не удалось создать контекст OpenGL {major}.{minor}")
-    
-    glfw.terminate()
+if len(sys.argv) < 2:
+    print("Plays a wave file.\n\nUsage: %s filename.wav" % sys.argv[0])
+    sys.exit(-1)
 
-if __name__ == "__main__":
-    check_opengl()
+wf = wave.open('music.wav', 'rb')
+
+p = pyaudio.PyAudio()
+
+stream = p.open(format=p.get_format_from_width(wf.getsampwidth()),
+                channels=wf.getnchannels(),
+                rate=wf.getframerate(),
+                output=True)
+
+data = wf.readframes(CHUNK)
+
+while data != '':
+    stream.write(data)
+    data = wf.readframes(CHUNK)
+
+stream.stop_stream()
+stream.close()
+
+p.terminate()
