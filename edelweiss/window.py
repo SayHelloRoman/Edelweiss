@@ -3,8 +3,10 @@ from OpenGL.GL import *
 
 from .audio import SoundManager
 from .figure import Square, Circle, GameObject
+from .utils import load_icon, GLFWimage
 import numpy as np
 import abc
+from PIL import Image as PILImage
 
 class GameEngine:
     def __init__(self, width=800, height=600, title="Game Engine"):
@@ -28,6 +30,15 @@ class GameEngine:
         if not self.window:
             glfw.terminate()
             raise Exception("Failed to create window")
+        
+        icon_img = PILImage.open("edelweiss/edelweiss.png").convert("RGBA").resize((64, 64), PILImage.ANTIALIAS)
+        icon_data = icon_img.tobytes()
+        width, height = icon_img.size
+        pixels = list(icon_img.getdata())
+        pixel_rows = [pixels[i * width:(i + 1) * width] for i in range(height)]
+
+
+        glfw.set_window_icon(self.window, 1, [(width, height, pixel_rows)])
         
         glfw.make_context_current(self.window)
         print(f"OpenGL Version: {glGetString(GL_VERSION).decode('utf-8')}")
