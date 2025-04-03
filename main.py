@@ -1,41 +1,35 @@
 from edelweiss import GameEngine, Scene, Square
 from edelweiss.audio import SoundManager
+from edelweiss.widgets import Button
 import glfw
 import numpy as np
+import random
 
 class MyScene(Scene):
     def __init__(self):
         super().__init__()
-        self.last_time = 0.0
+        self.time = 0.0
+
+        button = Button(
+            "test_button",
+            400, 300, 200, 100,
+            [0.5, 0.0, 0.0],
+            outline_color=[1, 1, 1],
+            outline_width=3.0,
+            radius=0.4,
+            on_click=lambda x: x.set_position(random.randint(1, 500), random.randint(1, 500))
+        )
+
+        self.window = glfw.get_current_context()
+    
+        self.add_object(button)
 
     def update(self):
-        current_time = glfw.get_time()
-        delta_time = current_time - self.last_time if self.last_time != 0.0 else 0.0
-        self.last_time = current_time
-        
-        if "square1" in self.objects:
-            obj = self.objects["square1"]
-            half_size = 0.5 * obj.scale
-            
-            obj.position += obj.velocity * delta_time
-            
-            if obj.position[1] > 1 - half_size or obj.position[1] < -1 + half_size:
-                obj.velocity[1] = -obj.velocity[1]
-
-            if obj.position[0] > 1 - half_size or obj.position[0] < -1 + half_size:
-                obj.velocity[0] = -obj.velocity[0]
+        self.time += 0.016
 
 if __name__ == "__main__":
     sound_manager = SoundManager()
-
     engine = GameEngine(800, 600, "Bouncing Square")
     scene = MyScene()
-
-    x = Square(name='square1')
-    x.set_position(0.0, 0.0)
-    x.set_scale(0.2)
-    x.velocity = np.array([0.7, 1.0, 0.0], dtype=np.float32)
-
-    scene.add_object(x)
     engine.set_scene(scene)
     engine.run()

@@ -95,6 +95,7 @@ class Square(GameObject):
         glBindVertexArray(0)
 
     def render(self):
+        print(self.shader)
         glUseProgram(self.shader)
         glUniform3fv(glGetUniformLocation(self.shader, "u_position"), 1, self.position)
         glUniform1f(glGetUniformLocation(self.shader, "u_scale"), self.scale)

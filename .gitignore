@@ -8,3 +8,5 @@ dist/
 main.spec
 *.wav
 .idea/
+*.pyd
+*.c

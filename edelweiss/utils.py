@@ -20,3 +20,11 @@ def load_icon(filename):
     c_data = (ctypes.c_ubyte * len(data))(*data)
     image = GLFWimage(width, height, c_data)
     return image
+
+
+def pixels_to_normalized_coordinates(x, y, width, height, window_width, window_height):
+    norm_x = (2 * x / window_width) - 1
+    norm_y = 1 - (2 * y / window_height)
+    norm_width = (2 * width / window_width)
+    norm_height = (2 * height / window_height)
+    return norm_x, norm_y, norm_width, norm_height
