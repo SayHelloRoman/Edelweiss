@@ -10,3 +10,6 @@ main.spec
 .idea/
 *.pyd
 *.c
+example_*.py
+.venv/
+.venv_clean/

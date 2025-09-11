@@ -1,7 +1,7 @@
 <div align="center">
   <img src="https://github.com/SayHelloRoman/Edelweiss/blob/main/image/edelweiss.png" alt="Edelweiss Logo" width="150">
   <h1>Edelweiss</h1>
-  <p>Edelweiss is a lightweight game engine framework built with Python and OpenGL, designed to simplify the creation of 2D games</p>
+  <p>Edelweiss is a lightweight game engine framework built with Python and OpenGL, designed to simplify the creation of 2D games.</p>
   <p><strong>Note: This project is currently in beta testing. Features may change, and there may be bugs. Contributions and feedback are welcome!</strong></p>
 </div>
 
@@ -21,15 +21,14 @@
 
 ## Usage
 
-This will launch a window displaying animated squares.
+This will launch a window displaying animated shapes.
 
-<div style="text-align: center;">
-  <img src="https://github.com/SayHelloRoman/Edelweiss/blob/main/image/example.gif" alt="GIF">
-</div>  
+<div align="center">
+  <img src="https://github.com/SayHelloRoman/Edelweiss/blob/main/image/example.gif" alt="Example GIF">
+</div>
 
 ```python
 from edelweiss import GameEngine, Scene, Square, Circle
-import time
 import numpy as np
 
 class MyScene(Scene):
@@ -42,16 +41,12 @@ class MyScene(Scene):
         if "square1" in self.objects:
             self.objects["square1"].set_position(np.sin(self.time) * 0.5, 0.0)
 
-
 if __name__ == "__main__":
     engine = GameEngine(800, 600, "edelweiss test")
     scene = MyScene()
 
     x = Square(name='square1')
     x.set_position(-0.5, 0.0)
-    x.set
-    
-
     scene.add_object(x)
 
     engine.set_scene(scene)
@@ -59,16 +54,62 @@ if __name__ == "__main__":
 ```
 
 ## Installation
-
 1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/Edelweiss.git
+cd Edelweiss
+```
+2. Install dependencies (see requirements.txt):
+```bash
+pip install -r requirements.txt
+```
+3. Ensure you have a compatible OpenGL driver. On macOS the system may create a legacy OpenGL 2.1 context; Edelweiss handles this automatically.
 
-```git clone https://github.com/yourusername/edelweiss.git
-cd edelweiss
+
+## Quick Start
+
+### macOS
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+# Optional audio support:
+# brew install portaudio && pip install pyaudio
+python main.py
 ```
 
-2. Install the required Python packages:
-```
-pip install PyOpenGL PyOpenGL_accelerate glfw numpy
+### Linux
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+# Optional audio support:
+# sudo apt install -y portaudio19-dev && pip install pyaudio
+python main.py
 ```
 
-3. Ensure you have a compatible version of OpenGL installed on your system.
+
+## Troubleshooting
+
+GLError 1282 glGenVertexArrays or version '330' is not supported
+Your system created a legacy OpenGL 2.1 context. Edelweiss automatically falls back to GLSL 120 and a no-VAO path on macOS/older drivers.
+
+Editable install fails asking for Cython
+Editable mode is optional. If you need it: pip install Cython then pip install -e ..
+
+macOS icon warning
+Cocoa: Regular windows do not have icons on macOS — harmless, can be ignored.
+
+## Contributing
+
+Contributions are welcome!
+
+Fork the repo and create a feature branch: git checkout -b docs/quick-start-and-i18n.
+
+Make small, focused changes (e.g., docs, translations, minor fixes).
+
+Run python main.py to smoke-test before/after changes.
+
+Open a Pull Request describing what and why you changed.
+
+Please prefer English for comments, logs and docs to keep the project accessible for a global audience.
