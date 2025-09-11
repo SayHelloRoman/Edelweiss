@@ -1,2 +1,6 @@
 glfw
-PyOpenAL 
+PyOpenGL
+PyOpenGL_accelerate
+numpy
+Pillow
+pyaudio    # optional
