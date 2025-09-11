@@ -58,24 +58,22 @@ if __name__ == "__main__":
 ```
 
 ## Installation
-1. Clone the repository:
 
+1. Clone the repository:
 ```bash
 git clone https://github.com/yourusername/Edelweiss.git
 cd Edelweiss
 ```
-
 2. Install dependencies (see requirements.txt):
-
 ```bash
 pip install -r requirements.txt
 ```
-
 3. Ensure you have a compatible OpenGL driver. On macOS the system may create a legacy OpenGL 2.1 context; Edelweiss handles this automatically.
 
-### Quick Start
 
-## macOS
+## Quick Start
+
+### macOS
 
 ```bash
 python -m venv .venv
@@ -87,7 +85,7 @@ python main.py
 ```
 
 
-## Linux
+### Linux
 
 ```bash
 python -m venv .venv
