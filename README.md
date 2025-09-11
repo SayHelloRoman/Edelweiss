@@ -21,7 +21,10 @@
 
 ## Demo: Button Example
 
-<video src="https://github.com/MykytaSalykin/Edelweiss/raw/feat/examples-and-i18n/image/example_button.mp4" controls width="600"></video>
+![Interactive Button](image/example_button.gif)
+
+> MP4 (download/play):  
+> https://github.com/MykytaSalykin/Edelweiss/raw/feat/examples-and-i18n/image/example_button.mp4
 
 ## Usage
 
