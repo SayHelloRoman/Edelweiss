@@ -19,6 +19,10 @@
 - GLFW
 - NumPy
 
+## Demo: Button Example
+
+<video src="https://github.com/MykytaSalykin/Edelweiss/raw/feat/examples-and-i18n/image/example_button.mp4" controls width="600"></video>
+
 ## Usage
 
 This will launch a window displaying animated shapes.
