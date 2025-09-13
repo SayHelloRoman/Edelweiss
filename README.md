@@ -19,6 +19,10 @@
 - GLFW
 - NumPy
 
+## Demo: Button Example
+
+![Interactive Button](image/example_button.gif)
+
 ## Usage
 
 This will launch a window displaying animated shapes.
@@ -54,6 +58,7 @@ if __name__ == "__main__":
 ```
 
 ## Installation
+
 1. Clone the repository:
 ```bash
 git clone https://github.com/yourusername/Edelweiss.git
@@ -69,6 +74,7 @@ pip install -r requirements.txt
 ## Quick Start
 
 ### macOS
+
 ```bash
 python -m venv .venv
 source .venv/bin/activate
@@ -78,7 +84,9 @@ pip install -r requirements.txt
 python main.py
 ```
 
+
 ### Linux
+
 ```bash
 python -m venv .venv
 source .venv/bin/activate
@@ -88,28 +96,32 @@ pip install -r requirements.txt
 python main.py
 ```
 
+## Examples
+
+```bash
+python example_square.py
+python example_shapes.py
+python example_button.py
+# optional:
+# python example_audio.py
+```
 
 ## Troubleshooting
 
-GLError 1282 glGenVertexArrays or version '330' is not supported
-Your system created a legacy OpenGL 2.1 context. Edelweiss automatically falls back to GLSL 120 and a no-VAO path on macOS/older drivers.
+GLError 1282 / version '330' is not supported: your system created a legacy OpenGL 2.1 context. Edelweiss falls back to GLSL 120 and a no-VAO path on macOS/older drivers.
 
-Editable install fails asking for Cython
-Editable mode is optional. If you need it: pip install Cython then pip install -e ..
+Editable install asks for Cython: editable mode is optional. If you need it: pip install Cython then pip install -e ..
 
-macOS icon warning
-Cocoa: Regular windows do not have icons on macOS — harmless, can be ignored.
+macOS icon warning: “Cocoa: Regular windows do not have icons on macOS” — harmless, can be ignored.
 
 ## Contributing
 
-Contributions are welcome!
-
 Fork the repo and create a feature branch: git checkout -b docs/quick-start-and-i18n.
 
-Make small, focused changes (e.g., docs, translations, minor fixes).
+Make small, focused changes (docs, translations, minor fixes).
 
-Run python main.py to smoke-test before/after changes.
+Run examples to smoke-test (python example_button.py, etc.).
 
 Open a Pull Request describing what and why you changed.
 
-Please prefer English for comments, logs and docs to keep the project accessible for a global audience.
+Please prefer English for comments, logs, and docs to keep the project accessible for a global audience.
